@@ -17,8 +17,13 @@ It uses a a trie created using words.csv to check if a given word exists. It als
 - End of game 
     - display the highest scoring word of each player
     - simple UI to show the ranking
+- Improve location of variables/macros, file/folder hierarchies
 
 ## Some learnings
 - There are many possible reasons for a duplicate symbol error. What I personally encountered while working on this are the following:
     - circular dependency - A.h includes B.h, and B.h includes A.h
-    - const variables in a header file
+    - const variables in a header
+- Here are some ways to share a variable outside a .c file
+    - Getter/setter functions are also a thing in C
+    - Initializing the variable in .c and using "extern" in its header file will expose this variable to others
+- Never forget to include the header file in the .c file. It's good practice to always #include first one's own header file

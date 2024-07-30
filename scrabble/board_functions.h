@@ -11,6 +11,8 @@
 #include "player_functions.h"
 #include "word_functions.h"
 
+#define BOARD_DIMENSION 15
+
 extern const int letterScores[27];
 
 typedef struct tile {

@@ -7,7 +7,6 @@
 #include <stdlib.h>
 
 #include "board_functions.h"
-const int BOARD_DIMENSION = 15;
 
 Tile** board;
 
