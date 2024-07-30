@@ -10,10 +10,15 @@ It uses a a trie created using words.csv to check if a given word exists. It als
 ## TODO
 - error handling
 - enable skip once player has chosen to play
-- file segregation for functions
+- ~~file segregation for functions~~
 - use relative path for words.csv
 
 ## What can be improved
 - End of game 
     - display the highest scoring word of each player
     - simple UI to show the ranking
+
+## Some learnings
+- There are many possible reasons for a duplicate symbol error. What I personally encountered while working on this are the following:
+    - circular dependency - A.h includes B.h, and B.h includes A.h
+    - const variables in a header file
