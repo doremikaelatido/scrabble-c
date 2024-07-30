@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A02D99912C39437F00C87A19 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A02D99902C39437F00C87A19 /* main.c */; };
+		A02D99992C54E87600C87A19 /* board_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = A02D99982C54E87600C87A19 /* board_functions.c */; };
+		A02D999C2C54EC2800C87A19 /* word_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = A02D999B2C54EC2800C87A19 /* word_functions.c */; };
+		A02D999F2C54F00F00C87A19 /* game_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = A02D999E2C54F00F00C87A19 /* game_functions.c */; };
+		A02D99A22C5507CD00C87A19 /* player_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = A02D99A12C5507CD00C87A19 /* player_functions.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		A02D998D2C39437F00C87A19 /* scrabble */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scrabble; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02D99902C39437F00C87A19 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		A02D99972C54E87600C87A19 /* board_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = board_functions.h; sourceTree = "<group>"; };
+		A02D99982C54E87600C87A19 /* board_functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = board_functions.c; sourceTree = "<group>"; };
+		A02D999A2C54EC2800C87A19 /* word_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = word_functions.h; sourceTree = "<group>"; };
+		A02D999B2C54EC2800C87A19 /* word_functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = word_functions.c; sourceTree = "<group>"; };
+		A02D999D2C54F00F00C87A19 /* game_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = game_functions.h; sourceTree = "<group>"; };
+		A02D999E2C54F00F00C87A19 /* game_functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = game_functions.c; sourceTree = "<group>"; };
+		A02D99A02C5507CD00C87A19 /* player_functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = player_functions.h; sourceTree = "<group>"; };
+		A02D99A12C5507CD00C87A19 /* player_functions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = player_functions.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				A02D99902C39437F00C87A19 /* main.c */,
+				A02D99972C54E87600C87A19 /* board_functions.h */,
+				A02D99982C54E87600C87A19 /* board_functions.c */,
+				A02D999A2C54EC2800C87A19 /* word_functions.h */,
+				A02D999B2C54EC2800C87A19 /* word_functions.c */,
+				A02D999D2C54F00F00C87A19 /* game_functions.h */,
+				A02D999E2C54F00F00C87A19 /* game_functions.c */,
+				A02D99A02C5507CD00C87A19 /* player_functions.h */,
+				A02D99A12C5507CD00C87A19 /* player_functions.c */,
 			);
 			path = scrabble;
 			sourceTree = "<group>";
@@ -119,7 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02D99992C54E87600C87A19 /* board_functions.c in Sources */,
+				A02D999C2C54EC2800C87A19 /* word_functions.c in Sources */,
 				A02D99912C39437F00C87A19 /* main.c in Sources */,
+				A02D999F2C54F00F00C87A19 /* game_functions.c in Sources */,
+				A02D99A22C5507CD00C87A19 /* player_functions.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +269,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = NO;
+				OTHER_LDFLAGS = "\"-ld_classic\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +279,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				GCC_NO_COMMON_BLOCKS = NO;
+				OTHER_LDFLAGS = "\"-ld_classic\"";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
