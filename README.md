@@ -25,6 +25,7 @@ It also implements a few structures that serve specific purposes:
     - ~~simple UI to show the ranking~~
 - Improve location of variables/macros, file/folder hierarchies
 - Tests? Already looked into gtest but I'm encountering errors - incompatible versions perhaps - something to investigate
+- Improve letter distribution - don't rely on probabilities, in traditional scrabble, there are N tiles allocated to each letter
 
 ## Some learnings
 - There are many possible reasons for a duplicate symbol error. What I personally encountered while working on this are the following:
