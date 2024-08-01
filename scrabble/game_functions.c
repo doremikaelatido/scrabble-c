@@ -97,13 +97,13 @@ bool connectedWordsAreValid(int r, int c, PlayerTurn playerTurn, int wordIdx, bo
         }
     }
     
-    if ((isEndOfWord || isHorizontal) && (board[r+1][c].letterPlaced != '\0'))
+    if ((isEndOfWord || isHorizontal) && (r < 14 && board[r+1][c].letterPlaced != '\0'))
         validConnectedWords &= isValidConnectedWord(c, r, verticalConnect, verticalLettersLength, false);
-    if ((isStartOfWord || isHorizontal) && (board[r-1][c].letterPlaced != '\0'))
+    if ((isStartOfWord || isHorizontal) && (r > 0 && board[r-1][c].letterPlaced != '\0'))
         validConnectedWords &= isValidConnectedWord(c, r, verticalConnect, verticalLettersLength, false);
-    if ((isEndOfWord || !isHorizontal) && (board[r][c+1].letterPlaced != '\0'))
+    if ((isEndOfWord || !isHorizontal) && (c < 14 && board[r][c+1].letterPlaced != '\0'))
         validConnectedWords &= isValidConnectedWord(r, c, horizontalConnect, horizontalLettersLength, true);
-    if ((isStartOfWord || !isHorizontal) && (board[r][c-1].letterPlaced != '\0'))
+    if ((isStartOfWord || !isHorizontal) && (c > 0 && board[r][c-1].letterPlaced != '\0'))
         validConnectedWords &= isValidConnectedWord(r, c, horizontalConnect, horizontalLettersLength, true);
     
     return validConnectedWords;

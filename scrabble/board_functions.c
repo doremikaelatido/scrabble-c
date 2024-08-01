@@ -124,3 +124,32 @@ void printPlayerScores(Player* players, int numPlayers){
     }
     printf("\n=================================================================================\n");
 }
+
+Player* rankPlayers(Player* players, int numPlayers){
+    Player *rankings = malloc(sizeof(Player) * numPlayers);
+    for (int i = 0; i<numPlayers; i++)
+        rankings[i].playerId = 0;
+    
+    for (int n = 0; n<numPlayers; n++){
+        int r = 0;
+        while (rankings[r].playerId != 0 && rankings[r].totalScore > players[n].totalScore)
+            r++;
+        Player movePlayer = rankings[r];
+        rankings[r] = players[n];
+        while(movePlayer.playerId != 0){
+            r++;
+            Player newMovePlayer = players[r];
+            rankings[r] = movePlayer;
+            movePlayer = newMovePlayer;
+        }
+    }
+    return rankings;
+}
+
+void displayWinner(Player* players, int numPlayers){
+    printf("Here are the winners\n");
+    Player *rankings = rankPlayers(players, numPlayers);
+    for (int p = 0; p < numPlayers; p++){
+        printf("Rank %i: Player %i with %i points\n", p+1, rankings[p].playerId, rankings[p].totalScore);
+    }
+}

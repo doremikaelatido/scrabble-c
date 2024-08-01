@@ -6,6 +6,9 @@
 //
 #include <ctype.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <dirent.h>
+
 #include "word_functions.h"
 
 #define MAXCHAR 1000
@@ -13,6 +16,19 @@
 TrieNode trie;
 
 void loadWordsToTrie(void){
+    char cwd[MAXCHAR];
+    if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        printf("Current working dir: %s\n", cwd);
+        DIR *d;
+        struct dirent *dir;
+        d = opendir("../Debug/scrabble");
+          if (d) {
+            while ((dir = readdir(d)) != NULL) {
+              printf("%s\n", dir->d_name);
+            }
+            closedir(d);
+          }
+    }
     FILE *filePointer = fopen("/Users/mikaelanicoleramos/Documents/GitHub/scrabble/dictionary.csv","r");
     char row[MAXCHAR];
 

@@ -3,7 +3,7 @@
 
 #include "game_functions.h"
 
-#define TOTAL_TILES 100
+#define TOTAL_TILES 30
 
 int totalTilesDistributed = 0;
 
@@ -38,7 +38,7 @@ int main(void) {
 
     prepareGame();
     int nthPlayer = 0, skipCounter = 0;
-    while (totalTilesDistributed != 100 && skipCounter < 6){
+    while (totalTilesDistributed < TOTAL_TILES && skipCounter < 6){
         printPlayerScores(players, numPlayers);
         printBoard();
         bool userPlayed = play(&players[nthPlayer]);
@@ -49,6 +49,8 @@ int main(void) {
         }
         nthPlayer = (nthPlayer + 1) % numPlayers;
     }
+    
+    displayWinner(players, numPlayers);
     
     return 0;
 }

@@ -7,17 +7,24 @@ It closely mirrors the traditional Scrabble board game, as well as its mechanics
 
 It uses a a trie created using words.csv to check if a given word exists. It also has checking if all connected letters/words for a given turn exists.
 
+It also implements a few structures that serve specific purposes:
+- Player - information about the players of the game, such as tiles and current score
+- PlayerTurn - information about the words played by the players, where they are positioned etc
+- TrieNode - used for setting up the data structure to be used for efficient word search
+
 ## TODO
-- error handling
+- input error handling
 - enable skip once player has chosen to play
 - ~~file segregation for functions~~
+- stop distributing tiles once TOTAL_TILES exceeded - we only want to distribute up to the limit
 - use relative path for words.csv
 
 ## What can be improved
 - End of game 
     - display the highest scoring word of each player
-    - simple UI to show the ranking
+    - ~~simple UI to show the ranking~~
 - Improve location of variables/macros, file/folder hierarchies
+- Tests? Already looked into gtest but I'm encountering errors - incompatible versions perhaps - something to investigate
 
 ## Some learnings
 - There are many possible reasons for a duplicate symbol error. What I personally encountered while working on this are the following:
