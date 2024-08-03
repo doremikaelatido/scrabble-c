@@ -202,6 +202,7 @@ void setBestWord(PlayerTurn playerTurn){
 
 void updateBestWord(PlayerTurn playerTurn){
     if (playerTurn.score > playerTurn.player->bestWordScore){
+        printf("Setting player's best word to: %s\n", playerTurn.word);
         playerTurn.player->bestWord = playerTurn.word;
         playerTurn.player->bestWordScore = playerTurn.score;
     }

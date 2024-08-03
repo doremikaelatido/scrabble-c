@@ -15,6 +15,7 @@ It also implements a few structures that serve specific purposes:
 ## TODO
 - input error handling
 - enable skip once player has chosen to play
+- free pointers
 - ~~file segregation for functions~~
 - stop distributing tiles once TOTAL_TILES exceeded - we only want to distribute up to the limit
 - use relative path for words.csv
