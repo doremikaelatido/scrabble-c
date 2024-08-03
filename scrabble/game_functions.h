@@ -19,6 +19,8 @@ extern const int letterProbabilities[27];
 PlayerTurn placeTileAndGetScore(PlayerTurn *playerTurn);
 PlayerTurn placeLetterTiles(PlayerTurn *playerTurn, bool isHorizontal);
 
+PlayerTurn getBestWord(void);
+
 char getRandomCharacter(void);
 void replaceLetter(Player* player, char letterUsed);
 bool isInsideBoard(PlayerTurn playerTurn);

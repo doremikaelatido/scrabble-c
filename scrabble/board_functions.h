@@ -31,6 +31,6 @@ Tile** createBoard(void);
 void printBoard(void);
 void printPlayerLetters(Player player);
 void printPlayerScores(Player* players, int numPlayers);
-void displayWinner(Player* players, int numPlayers);
+void displayResults(Player* players, int numPlayers);
 
 #endif /* board_functions_h */

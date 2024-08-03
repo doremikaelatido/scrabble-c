@@ -151,7 +151,6 @@ PlayerTurn placeTileAndGetScore(PlayerTurn *playerTurn){
     
     Tile** board = getBoard();
     if (canPlayThisMove(*playerTurn)){
-        printf("Can play this turn for player %d with word %s\n", playerTurn->player->playerId, playerTurn->word);
         for (int x = playerTurn->startX; x <= playerTurn->endX; x++){
             for (int y = playerTurn->startY; y <= playerTurn->endY; y++){
                 letterMultiplier = 1;
@@ -191,6 +190,23 @@ PlayerTurn placeLetterTiles(PlayerTurn *playerTurn, bool isHorizontal){
     return placeTileAndGetScore(playerTurn);
 }
 
+/*PlayerTurn getBestWord(void){
+    return bestWord;
+}
+
+void setBestWord(PlayerTurn playerTurn){
+    if (bestWord.score < playerTurn.score){
+        bestWord = playerTurn;
+    }
+}*/
+
+void updateBestWord(PlayerTurn playerTurn){
+    if (playerTurn.score > playerTurn.player->bestWordScore){
+        playerTurn.player->bestWord = playerTurn.word;
+        playerTurn.player->bestWordScore = playerTurn.score;
+    }
+}
+
 void playTurn(Player* player, int* totalTilesDistributed){
     char word[7];
     int row, column;
@@ -210,10 +226,12 @@ void playTurn(Player* player, int* totalTilesDistributed){
             playerTurn.startY = column - 1;
             playerTurn.wordLength = (int)strlen(word);
             playerTurn = placeLetterTiles(&playerTurn, direction == 'h');
-            printf("The player used %d tiles for the word %s\n", playerTurn.tilesUsed, playerTurn.word);
         }
     } while (playerTurn.tilesUsed == 0);
-    
+
+    printf("Player %i scored %i with the word: %s\n", playerTurn.player->playerId, playerTurn.score, playerTurn.word);
+
+    updateBestWord(playerTurn);
     player->totalScore += playerTurn.score;
     *totalTilesDistributed += playerTurn.tilesUsed;
 }

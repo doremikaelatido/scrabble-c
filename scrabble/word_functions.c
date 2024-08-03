@@ -17,8 +17,9 @@ TrieNode trie;
 
 void loadWordsToTrie(void){
     char cwd[MAXCHAR];
-    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-        printf("Current working dir: %s\n", cwd);
+    /* use relative path
+     if (getcwd(cwd, sizeof(cwd)) != NULL) {
+        //printf("Current working dir: %s\n", cwd);
         DIR *d;
         struct dirent *dir;
         d = opendir("../Debug/scrabble");
@@ -28,7 +29,7 @@ void loadWordsToTrie(void){
             }
             closedir(d);
           }
-    }
+    }*/
     FILE *filePointer = fopen("/Users/mikaelanicoleramos/Documents/GitHub/scrabble/dictionary.csv","r");
     char row[MAXCHAR];
 

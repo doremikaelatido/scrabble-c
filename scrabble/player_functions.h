@@ -16,6 +16,8 @@ typedef struct player {
     int playerId;
     int totalScore;
     char letters[LETTERS_ON_DECK];
+    int bestWordScore;
+    char* bestWord;
 } Player;
 
 typedef struct playerTurn {

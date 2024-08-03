@@ -9,6 +9,7 @@
 #include "board_functions.h"
 
 Tile** board;
+PlayerTurn* bestWords;
 
 void setBoard(Tile** newBoard){
     board = newBoard;
@@ -146,10 +147,13 @@ Player* rankPlayers(Player* players, int numPlayers){
     return rankings;
 }
 
-void displayWinner(Player* players, int numPlayers){
-    printf("Here are the winners\n");
+void displayResults(Player* players, int numPlayers){
+    printf("==================================SCOREBOARD=====================================\n");
+    printf("WINNERS:\n");
     Player *rankings = rankPlayers(players, numPlayers);
     for (int p = 0; p < numPlayers; p++){
         printf("Rank %i: Player %i with %i points\n", p+1, rankings[p].playerId, rankings[p].totalScore);
+        printf("Player's best word is %s with the score %i\n", rankings[p].bestWord, rankings[p].bestWordScore);
     }
+    printf("==================================SCOREBOARD=====================================\n");
 }

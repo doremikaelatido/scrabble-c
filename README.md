@@ -18,6 +18,7 @@ It also implements a few structures that serve specific purposes:
 - ~~file segregation for functions~~
 - stop distributing tiles once TOTAL_TILES exceeded - we only want to distribute up to the limit
 - use relative path for words.csv
+- new bug found - appending a word to the left of a horizontal word - not able to detect the new 	connected words
 
 ## What can be improved
 - End of game 

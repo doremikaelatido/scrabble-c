@@ -3,7 +3,7 @@
 
 #include "game_functions.h"
 
-#define TOTAL_TILES 30
+#define TOTAL_TILES 40
 
 int totalTilesDistributed = 0;
 
@@ -50,7 +50,6 @@ int main(void) {
         nthPlayer = (nthPlayer + 1) % numPlayers;
     }
     
-    displayWinner(players, numPlayers);
-    
+    displayResults(players, numPlayers);
     return 0;
 }
